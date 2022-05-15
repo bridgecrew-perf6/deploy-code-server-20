@@ -34,6 +34,11 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # -----------
 
+# Pre-install and settings for snap
+RUN sudo apt-get update && sudo apt-get install -yqq daemonize dbus-user-session fontconfig
+RUN sudo daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd --system-unit=basic.target
+RUN sudo nsenter -t $(pidof systemd) -a su - $LOGNAME
+
 # Install java17
 RUN sudo apt install openjdk-17-jre openjdk-17-jdk -y
 
