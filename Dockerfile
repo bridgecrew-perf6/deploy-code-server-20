@@ -37,14 +37,11 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # Install java17
 RUN sudo apt install openjdk-17-jre openjdk-17-jdk -y
 
-# Install sdkman
-RUN sudo curl -s "https://get.sdkman.io" | bash
-
-# Make sdkman runnable
-RUN sh ~/.bashrc
+# Install snap
+RUN sudo apt install snapd -y
 
 # Install Kotlin
-RUN sdk install kotlin
+RUN sudo snap install kotlin --classic
 
 # Port
 ENV PORT=8080
