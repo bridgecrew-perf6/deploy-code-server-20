@@ -37,8 +37,8 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # Install java17
 RUN sudo apt install openjdk-17-jre openjdk-17-jdk -y
 
-# Install snap
-RUN sudo apt install snapd -y
+# Install snapd
+RUN sudo apt install snapd -y && service snapd start
 
 # Install Kotlin
 RUN sudo snap install kotlin --classic
