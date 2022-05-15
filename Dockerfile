@@ -41,7 +41,7 @@ RUN sudo apt install openjdk-17-jre openjdk-17-jdk -y
 RUN sudo curl -s "https://get.sdkman.io" | bash
 
 # Make sdkman runnable
-RUN . ~/.bashrc
+RUN sh ~/.bashrc
 
 # Install Kotlin
 RUN sdk install kotlin
