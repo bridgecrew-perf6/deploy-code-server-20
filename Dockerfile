@@ -38,7 +38,10 @@ RUN sudo chown -R coder:coder /home/coder/.local
 RUN sudo apt install openjdk-17-jre openjdk-17-jdk -y
 
 # Install sdkman
-RUN sudo curl -s "https://get.sdkman.io" | bash && . ~/.bashrc
+RUN sudo curl -s "https://get.sdkman.io" | bash
+
+# Make sdkman runnable
+RUN sudo source "/home/coder/.sdkman/bin/sdkman-init.sh"
 
 # Install Kotlin
 RUN sdk install kotlin
