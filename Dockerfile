@@ -42,7 +42,7 @@ RUN curl -s "https://get.sdkman.io" | bash
 
 # source sdkman sh
 RUN chmod a+x "$HOME/.sdkman/bin/sdkman-init.sh"
-RUN /bin/sh -c "source ~/.bashrc"
+RUN /bin/sh -c ". ~/.bashrc"
 
 # Install Kotlin
 RUN sdk install kotlin
